@@ -1,0 +1,78 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("SpaceGG | Field Trip z", "Ocean")
+local Tab = Window:NewTab("Give items")
+local Section = Tab:NewSection("Give items")
+
+
+Section:NewButton("Give Donut", "Gives You a Donut", function()
+    local args = {
+        [1] = "PICKUP_ITEM",
+        [2] = "Donut"
+    }
+    
+    game:GetService("ReplicatedStorage").NetworkEvents.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Give MedKit", "Gives You a MedKit", function()
+    local args = {
+        [1] = "PICKUP_ITEM",
+        [2] = "MedKit"
+    }
+    
+    game:GetService("ReplicatedStorage").NetworkEvents.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Give Bandage", "Gives You a Bandage", function()
+    local args = {
+        [1] = "PICKUP_ITEM",
+        [2] = "Bandage"
+    }
+    
+    game:GetService("ReplicatedStorage").NetworkEvents.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local Tab = Window:NewTab("Healing Stuff")
+local Section = Tab:NewSection("Healing Stuff")
+
+Section:NewButton("Heal", "Heals You", function()
+    local args = {
+        [1] = "HEAL_PLAYER",
+        [2] = game:GetService("Players").LocalPlayer,
+        [3] = 100
+    } 
+   
+    game:GetService("ReplicatedStorage").NetworkEvents.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local Tab = Window:NewTab("Teleportings")
+local Section = Tab:NewSection("Teleportings")
+
+Section:NewButton("science room", "Teleports you to the science room", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(158, 7, -105)
+    print(SpaceGGWinnning)
+end)
+
+Section:NewButton("lunch lady", "Teleports you to the lunch lady", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(98, 7, -151)
+    print(SpaceGGWinnning)
+end)
+
+Section:NewButton("Gas station", "Teleports you to the Gas station", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-107, 3, 335)
+    print(SpaceGGWinnning)
+end)
+
+Section:NewButton("mailbox", "teleports you to the mailbox", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41, 7, -44)
+    print(SpaceGGWinnning)
+end)
+
+Section:NewButton("office", "Teleports you to the office", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62, 7, -29)
+    print(SpaceGGWinnning)
+end)
+
+Section:NewButton("supply closet", "Teleports you to the supply closet", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(159, 7, -64)
+    print(SpaceGGWinnning)
+end)
